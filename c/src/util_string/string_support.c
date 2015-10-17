@@ -55,18 +55,18 @@ int16_t string_support_formatString( char* pc_buf, const uint16_t cu16_bufLength
     switch( ch )
     {
       case 'u' :
-        format_support_convertUnsignedInteger( va_arg(va, unsigned int), 10, false, bf );
+        format_support_uint16ToString( va_arg(va, unsigned int), 10, false, bf );
         string_support_putString( &pc_buf, &u16_length, u16_maxLength, bf );
         break;
 
       case 'd':
-        format_support_convertSignedInteger( va_arg(va, int), 10, false, bf );
+        format_support_int16ToString( va_arg(va, int), 10, false, bf );
         string_support_putString( &pc_buf, &u16_length, u16_maxLength, bf );
         break;
 
       case 'x':
       case 'X':
-        format_support_convertUnsignedInteger( va_arg(va, unsigned int), 16, (ch == 'X'), bf );
+        format_support_uint16ToString( va_arg(va, unsigned int), 16, (ch == 'X'), bf );
         string_support_putString( &pc_buf, &u16_length, u16_maxLength, bf );
         break;
 
